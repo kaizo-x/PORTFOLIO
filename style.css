@@ -1,0 +1,89 @@
+/* Brushed Tech Atmosphere */
+.fixed-bg {
+    position: fixed; inset: 0; z-index: 0;
+    background-color: #020617;
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.12) 0%, transparent 80%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1.5px, transparent 1.5px);
+    background-size: 100% 100%, 45px 45px, 45px 45px;
+}
+
+/* Subtle Glow on Primary Text */
+.text-yellow-400 {
+    text-shadow: 0 0 12px rgba(250, 204, 21, 0.3);
+}
+
+.text-blue-500 {
+    text-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Glass Bento Cards with Glow Hover */
+.project-card {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem 2rem;
+    border-radius: 2.5rem;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+    border-color: rgba(250, 204, 21, 0.5);
+    background: rgba(30, 64, 175, 0.1);
+    transform: translateY(-8px);
+    /* Subtle Glow Ring */
+    box-shadow: 0 10px 40px -10px rgba(250, 204, 21, 0.15);
+}
+
+/* Pulsing Badge Glow */
+.live-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(74, 222, 128, 0.05); 
+    color: #4ade80;
+    padding: 5px 12px; border-radius: 99px; font-size: 9px;
+    font-weight: 800; border: 1px solid rgba(74, 222, 128, 0.2);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.1);
+}
+
+/* Logo & Nav Glow */
+.logo-icon {
+    box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+}
+
+.logo-icon:hover {
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.4);
+}
+
+/* Hero Button Glow */
+.hero-btn {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.2);
+}
+
+.hero-btn:hover {
+    box-shadow: 0 0 35px rgba(250, 204, 21, 0.4);
+}
+
+/* Reveal Transitions */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+body { cursor: default; }
+
+#snakeGame {
+    max-width: 100%;
+    height: auto;
+    background: #0d0d0f; /* Deep background for neon contrast */
+}
+
+/* Add a neon pulse animation for the game border */
+@keyframes neon-pulse {
+    0% { border-color: rgba(226, 184, 87, 0.2); }
+    50% { border-color: rgba(226, 184, 87, 0.8); }
+    100% { border-color: rgba(226, 184, 87, 0.2); }
+}
+
+#snakeGame {
+    border: 2px solid #e2b857;
+    animation: neon-pulse 3s infinite;
+}

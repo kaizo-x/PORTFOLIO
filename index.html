@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizo-X | Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%231e3a8a%22/><path d=%22M30 30L70 70M70 30L30 70%22 stroke=%22%23facc15%22 stroke-width=%2215%22 stroke-linecap=%22round%22/></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700&f[]=general-sans@400;600&f[]=space-mono@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#020617] text-white font-['General_Sans'] overflow-x-hidden">
+
+    <div class="fixed-bg"></div>
+    
+    <div id="loader" class="fixed inset-0 z-[1000] bg-[#020617] flex items-center justify-center">
+        <h1 class="text-xl font-['Clash_Display'] tracking-[0.5em] animate-pulse">KAIZO<span class="text-yellow-400">.X</span></h1>
+    </div>
+
+    <nav class="fixed top-0 w-full z-[100] backdrop-blur-md border-b border-white/5 px-8 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center border border-white/10 logo-icon transition-all">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4L20 20M20 4L4 20" stroke="#FACC15" stroke-width="3" stroke-linecap="round"/></svg>
+            </div>
+            <div class="text-lg font-bold tracking-tighter uppercase font-['Clash_Display']">Kaizo<span class="text-yellow-400">.X</span></div>
+        </div>
+        <div class="flex gap-6 text-[9px] uppercase tracking-[0.3em] font-semibold opacity-70">
+            <a href="#projects" class="hover:text-yellow-400 transition-all">Work</a>
+            <a href="#discipline" class="hover:text-yellow-400 transition-all">Lead</a>
+            <a href="#assets" class="hover:text-yellow-400 transition-all">Assets</a>
+            <a href="#contact" class="hover:text-yellow-400 transition-all">Contact</a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="opacity-0 transition-opacity duration-1000 relative z-10">
+        <section class="h-screen flex flex-col justify-center items-center px-6 text-center">
+            <div class="reveal">
+                <h1 class="text-7xl md:text-9xl font-bold tracking-tighter leading-none mb-4 font-['Clash_Display']">COMMAND<br><span class="text-yellow-400">&</span> CODE.</h1>
+                <p class="max-w-md mx-auto text-blue-200/40 text-[10px] md:text-xs mb-10 tracking-[0.5em] uppercase font-mono">System.Initialize // kaizo_v2</p>
+                <a href="#projects" class="inline-block border border-yellow-400 text-yellow-400 px-8 py-3 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-yellow-400 hover:text-black transition-all shadow-lg shadow-yellow-400/10">Explore Records</a>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+            <div class="space-y-20">
+                <div>
+                    <h3 class="text-[10px] tracking-[0.4em] text-yellow-400 uppercase mb-8 border-l-2 border-yellow-400 pl-4 font-bold font-mono">01. Web Core</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="grid-web"></div>
+                </div>
+                <div>
+                    <h3 class="text-[10px] tracking-[0.4em] text-blue-400 uppercase mb-8 border-l-2 border-blue-400 pl-4 font-bold font-mono">02. Logic Engines</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="grid-logic"></div>
+                </div>
+                <div>
+                    <h3 class="text-[10px] tracking-[0.4em] text-purple-400 uppercase mb-8 border-l-2 border-purple-400 pl-4 font-bold font-mono">03. Digital Assets</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="grid-design"></div>
+                </div>
+            </div>
+        </section>
+<section id="mana-game" class="py-24 px-6 lg:px-24 border-t border-white/5 bg-obsidian relative overflow-hidden">
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+        <h3 class="font-impact text-5xl mb-4 tracking-widest text-mana-gold">Trial of the Mage</h3>
+        <p class="font-story italic opacity-50 mb-10 text-sm">Control the mana flow. Do not touch the barrier.</p>
+        
+        <div class="relative inline-block p-4 bg-white/5 border border-mana-gold/20 rounded-2xl backdrop-blur-xl">
+            <canvas id="snakeGame" width="400" height="400" class="rounded-lg shadow-[0_0_50px_rgba(226,184,87,0.1)]"></canvas>
+            
+            <div id="game-over" class="absolute inset-0 flex flex-col items-center justify-center bg-obsidian/90 rounded-2xl hidden">
+                <h4 class="font-impact text-6xl text-mana-gold mb-4">MANA DEPLETED</h4>
+                <button onclick="resetGame()" class="px-8 py-3 bg-mana-gold text-obsidian font-impact text-xl rounded-full hover:scale-110 transition-transform">CAST AGAIN</button>
+            </div>
+        </div>
+        
+        <div class="mt-8 font-impact text-2xl tracking-widest opacity-40">
+            SCORE: <span id="game-score">00</span>
+        </div>
+    </div>
+</section>
+        <section id="discipline" class="py-32 px-6 bg-white/[0.01] border-y border-white/5 relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <h2 class="text-xs tracking-[0.5em] text-yellow-400 uppercase font-bold mb-4">Command & Service</h2>
+                        <h3 class="text-4xl font-['Clash_Display'] uppercase leading-tight mb-8">Leadership <br><span class="text-blue-500">Infrastructure.</span></h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-white/5 border border-white/10 p-6 rounded-2xl group hover:border-yellow-400/30 transition-all">
+                                <h4 class="text-sm font-bold uppercase mb-4 flex justify-between tracking-widest">NCC Cadet Journey <span class="text-yellow-400">75%</span></h4>
+                                <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-yellow-400 h-full w-[75%] shadow-[0_0_15px_rgba(250,204,21,0.5)]"></div>
+                                </div>
+                                <p class="text-[10px] mt-4 opacity-40 font-mono tracking-widest leading-relaxed">System Status: Preparing for 'C' Cert (2027). Discipline-first engineering approach.</p>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 p-6 rounded-2xl group hover:border-blue-400/30 transition-all">
+                                <h4 class="text-sm font-bold uppercase mb-4 flex justify-between tracking-widest">NGO Social Service <span class="text-blue-500">100%</span></h4>
+                                <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-blue-500 h-full w-[100%] shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+                                </div>
+                                <p class="text-[10px] mt-4 opacity-40 font-mono tracking-widest leading-relaxed">System Status: 30+ Certified Hours Complete. Community digital literacy impact.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center gap-8 reveal">
+                        <div class="relative flex flex-col items-center">
+                            <svg class="w-32 h-32 transform -rotate-90">
+                                <circle cx="64" cy="64" r="50" stroke="currentColor" stroke-width="8" fill="transparent" class="text-white/5" />
+                                <circle cx="64" cy="64" r="50" stroke="currentColor" stroke-width="8" fill="transparent" stroke-dasharray="314" stroke-dashoffset="78" class="text-yellow-400" />
+                            </svg>
+                            <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-mono text-xs font-bold uppercase">NCC</span>
+                        </div>
+                        <div class="relative flex flex-col items-center">
+                            <svg class="w-32 h-32 transform -rotate-90">
+                                <circle cx="64" cy="64" r="50" stroke="currentColor" stroke-width="8" fill="transparent" class="text-white/5" />
+                                <circle cx="64" cy="64" r="50" stroke="currentColor" stroke-width="8" fill="transparent" stroke-dasharray="314" stroke-dashoffset="0" class="text-blue-500" />
+                            </svg>
+                            <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-mono text-xs font-bold uppercase">NGO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="assets" class="py-24 px-6 border-b border-white/5">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-[10px] tracking-[0.4em] text-blue-400 uppercase mb-12 font-bold text-center">Verified Credentials</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="#" download class="bg-white text-black p-6 rounded-2xl flex flex-col justify-between hover:bg-yellow-400 transition-all hover:-translate-y-2">
+                        <i data-lucide="file-text" class="w-6 h-6 mb-4"></i>
+                        <h4 class="font-bold uppercase text-xs">Main Resume.pdf</h4>
+                    </a>
+                    <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-blue-400 transition-all">
+                        <i data-lucide="award" class="w-6 h-6 text-blue-400 mb-4"></i>
+                        <h4 class="font-bold uppercase text-[10px]">NGO Impact Cert</h4>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-yellow-400 transition-all">
+                        <i data-lucide="shield" class="w-6 h-6 text-yellow-400 mb-4"></i>
+                        <h4 class="font-bold uppercase text-[10px]">NCC Service Log</h4>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-purple-400 transition-all">
+                        <i data-lucide="code" class="w-6 h-6 text-purple-400 mb-4"></i>
+                        <h4 class="font-bold uppercase text-[10px]">Coding Certs</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-32 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-gradient-to-br from-blue-700/20 to-transparent border border-white/10 rounded-[3rem] p-12 md:p-24 relative overflow-hidden reveal">
+                    <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full"></div>
+                    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-yellow-400/10 blur-[120px] rounded-full"></div>
+
+                    <div class="grid md:grid-cols-2 gap-16 relative z-10 items-center">
+                        <div>
+                            <h2 class="text-5xl md:text-7xl font-bold font-['Clash_Display'] uppercase tracking-tighter leading-[0.9] mb-8">
+                                START A <br><span class="text-yellow-400">PROJECT?</span>
+                            </h2>
+                            <p class="text-blue-100/40 text-sm leading-relaxed max-w-sm mb-8">
+                                I'm currently looking for Internship opportunities for Summer 2026. Let's build something technically sound.
+                            </p>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </div>
+                                <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 transition-all">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Identity (Name)" class="bg-white/5 border border-white/10 p-5 rounded-2xl focus:outline-none focus:border-yellow-400 transition-all text-xs font-bold uppercase tracking-widest placeholder:text-white/20">
+                                <input type="email" placeholder="Email" class="bg-white/5 border border-white/10 p-5 rounded-2xl focus:outline-none focus:border-yellow-400 transition-all text-xs font-bold uppercase tracking-widest placeholder:text-white/20">
+                            </div>
+                            <textarea placeholder="Mission Briefing (Your Message)" class="w-full bg-white/5 border border-white/10 p-5 rounded-3xl h-40 focus:outline-none focus:border-yellow-400 transition-all text-xs font-bold uppercase tracking-widest placeholder:text-white/20"></textarea>
+                            <button type="submit" class="w-full bg-yellow-400 text-black py-6 rounded-3xl font-bold uppercase tracking-[0.3em] text-xs hover:bg-white transition-all shadow-xl shadow-yellow-400/10">Deploy Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-10 text-center text-gray-600 text-[9px] uppercase tracking-[0.6em]">Kaizo-X // Command & Code // 2026</footer>
+    </main>
+
+    <div id="project-modal" class="fixed inset-0 z-[2000] hidden items-center justify-center p-6 backdrop-blur-3xl bg-black/90">
+        <div class="bg-[#050b1a] border border-white/10 p-10 rounded-[3rem] max-w-2xl w-full relative">
+            <button onclick="closeModal()" class="absolute top-8 right-8 w-10 h-10 flex items-center justify-center bg-white/5 rounded-full hover:bg-yellow-400 hover:text-black transition-all"><i data-lucide="x"></i></button>
+            <span id="modal-tag" class="text-[10px] text-yellow-400 font-bold tracking-[0.3em] uppercase font-mono"></span>
+            <h3 id="modal-title" class="text-4xl font-bold font-['Clash_Display'] mt-4 mb-6 uppercase"></h3>
+            <div class="bg-black/60 p-6 rounded-2xl mb-8 border border-white/5">
+                <p id="modal-desc" class="text-blue-100/60 text-sm font-['Space_Mono'] leading-relaxed"></p>
+            </div>
+            <a id="modal-link" href="#" target="_blank" class="inline-flex items-center gap-3 bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-white transition-all"><i data-lucide="github" class="w-5 h-5"></i> View Source</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
